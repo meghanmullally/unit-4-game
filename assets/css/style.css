@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  background-color: orange;
+  line-height: 34px;
+   margin: 10px;
+  padding: 10px; 
+  text-align: center;
+}
+
+
+.rules {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  border: 2px solid black;
+  background-color: burlywood;
+  margin: 10px;
+  padding: 10px;
+  line-height: 28px;
+  color: green;
+}
+ 
+.win-losses, .totalScore-section {
+  background-color: lightseagreen; 
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+}
+
+.button-section {
+margin: 10px;
+padding: 10px;
+}
+
+#win-lose, #totalScore {
+  background-color: green; 
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  height: 225px;
+}
+

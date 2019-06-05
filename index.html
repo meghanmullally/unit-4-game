@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crystal Game</title>
+
+  <!--Css links-->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+<h1>Crystals Collector!!</h1>
+<section class="rules">
+<p>
+  You will be given a random number at the start of the game.
+  <br>
+  There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+  <br>
+  You win the game by matching your total score to random number, you will lose the game if your total score goes above the random number.
+  <br>
+  The value of each crystal is hidden from you until you click on it. 
+  <br>
+  Each time when the game starts, the game will change the values of each crystal 
+</p>
+</section>
+<section class="randomNum-section">
+<!--RandomNumber displayed-->
+<div id="ranNumb"></div>
+</section>
+<section class="win-losses">
+  <h2 class="wins">Wins: </h2>
+  <h2 class="losses">Losses: </h2>
+</section>
+  <!--Where the win and losses scores will be-->
+<div id="win-lose"></div>
+
+
+  <!-- There will be four crystals displayed as buttons on the page. -->
+  <section class="button-section">
+  <button id="red">
+    <img src="assets/images/red.png">
+  </button>
+  <button id="blue">
+    <img src="assets/images/blue.png">
+  </button>
+  <button id="green">
+    <img src="assets/images/green.png">
+  </button>
+  <button id="yellow">
+    <img src="assets/images/yellow.png">
+  </button>
+</section>
+
+<section class="totalScore-section">
+<h2>Your total score is: </h2>
+</section>
+<!--total Score displayed-->
+
+<div id="totalScore"></div>
+
+
+</body>
+
+</html>
