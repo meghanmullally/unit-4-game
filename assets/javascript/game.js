@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  let randomResult;
+  let randomResult = Math.floor(Math.random() * 102) + 19;
   let totalScore = 0;
   let wins = 0;
   let losses = 0;
@@ -11,15 +11,16 @@ $(document).ready(function () {
   let yellow;
   let blue;
 
+  $('#ranNumb').text(randomResult);
   function newResults() {
     // random number between 19-120 
     randomResult = Math.floor(Math.random() * 102) + 19;
     // Crystals Random 
     // random number between 1 and 12
-    red = Math.floor(Math.random() * 12) + 1;
-    green = Math.floor(Math.random() * 12) + 1;
-    blue = Math.floor(Math.random() * 12) + 1;
-    yellow = Math.floor(Math.random() * 12) + 1;
+    // red = Math.floor(Math.random() * 12) + 1;
+    // green = Math.floor(Math.random() * 12) + 1;
+    // blue = Math.floor(Math.random() * 12) + 1;
+    // yellow = Math.floor(Math.random() * 12) + 1;
   }
 
   // restartGame(); 
@@ -70,7 +71,7 @@ $(document).ready(function () {
       crystalValues[4] = Math.floor(Math.random() * 12) + 1;
 
       totalScore = totalScore + crystalValues[crystalKey];
-      console.log("New totalScore " + totalScore);
+      // console.log("New totalScore " + totalScore);
       $("#totalScore").text(totalScore);
 
       if (totalScore === randomResult) {
@@ -92,59 +93,8 @@ $(document).ready(function () {
 
 
 
-  // When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
-
-  // ON CLICK FUNCTION 
-
-  // $("#red").on("click", function () {
-  //   totalScore = totalScore + red;
-  //   console.log("red is " + totalScore);
-  //   // win / lose 
-  //   if (totalScore === randomResult) {
-  //     Winning();
-  //   } else if (totalScore > randomResult) {
-  //     lossing();
-  //   }
-
+  // $(".btn").on("click", function () {
+  //   newGame();
   // });
-
-  // $("#blue").on("click", function () {
-  //   totalScore = totalScore + blue;
-  //   console.log("blue is " + totalScore);
-  //   // win / lose 
-  //   if (totalScore === randomResult) {
-  //     Winning();
-  //   } else if (totalScore > randomResult) {
-  //     lossing();
-  //   }
-  // });
-
-  // $("#yellow").on("click", function () {
-  //   totalScore = totalScore + yellow;
-  //   console.log("yellow is " + totalScore);
-  //   // win / lose 
-  //   if (totalScore === randomResult) {
-  //     Winning();
-  //   } else if (totalScore > randomResult) {
-  //     lossing();
-  //   }
-  // });
-
-  // $("#green").on("click", function () {
-  //   totalScore = totalScore + green;
-  //   console.log("green is " + totalScore);
-  //   // win / lose 
-  //   if (totalScore === randomResult) {
-  //     Winning();
-  //   } else if (totalScore > randomResult) {
-  //     lossing();
-  //   }
-  // });
-
-
-
-  $(".btn").on("click", function () {
-    newGame();
-  });
 
 });
