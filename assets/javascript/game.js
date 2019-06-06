@@ -61,13 +61,14 @@ $(document).ready(function () {
   // Crystal variables 
 
   var crystalValues = {};
-  crystalValues[1] = Math.floor(Math.random() * 12) + 1;
-  crystalValues[2] = Math.floor(Math.random() * 12) + 1;
-  crystalValues[3] = Math.floor(Math.random() * 12) + 1;
-  crystalValues[4] = Math.floor(Math.random() * 12) + 1;
 
   function getCrystalHander(crystalKey) {
     return function () {
+      crystalValues[1] = Math.floor(Math.random() * 12) + 1;
+      crystalValues[2] = Math.floor(Math.random() * 12) + 1;
+      crystalValues[3] = Math.floor(Math.random() * 12) + 1;
+      crystalValues[4] = Math.floor(Math.random() * 12) + 1;
+
       totalScore = totalScore + crystalValues[crystalKey];
       console.log("New totalScore " + totalScore);
       $("#totalScore").text(totalScore);
