@@ -11,8 +11,8 @@ body {
 
 h1 {
   color: black;
-  /* background-color: orange; */
-  line-height: 34px;
+  font-family: 'Bungee Shade', cursive;
+  line-height: 54px;
   margin: 10px;
   padding: 10px;
   text-align: center;
