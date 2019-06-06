@@ -17,6 +17,10 @@
   <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+  <!---Jquery-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
 </head>
 
 <body>
@@ -44,11 +48,20 @@
     </div>
     <div class="row">
       <div class="col">
-        <div class="randomNum-section">
-          <!--RandomNumber displayed-->
-          <div id="ranNumb"></div>
-        </div>
 
+      </div>
+      <div class="col-3">
+        <button type="button" class="btn btn-light btn-lg m-2">PLAY!</button>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="randomNum-section">
+          <h3>Random Number:</h3>
+          <!--RandomNumber displayed-->
+          <p id="ranNumb"></p>
+        </div>
         <section class="win-losses">
           <h2 class="wins">Wins: <span id="wins"></span></h2>
           <h2 class="losses">Losses: <span id="losses"></span> </h2>
@@ -64,7 +77,7 @@
           <button id="red-button">
             <img class="crystalValue" id="red" src="assets/images/redGem.png" alt="red-crystal1">
           </button>
-          <button  id="blue-button">
+          <button id="blue-button">
             <img class="crystalValue" id="blue" src="assets/images/blueGem.png" alt="blue-crystal2">
           </button>
           <button id="green-button">
@@ -73,24 +86,22 @@
           <button id="yellow-button">
             <img class="crystalValue" id="yellow" src="assets/images/yellowGem.jpg" alt="yellow-crystal4">
           </button>
-          <div class="row">
-          <button type="button" class="btn btn-light btn-lg m-2">PLAY AGAIN</button>
-        </div>
+
         </div>
       </div>
+
 
       <div class="col">
         <div class="totalScore-section">
-          <h2>Your total score is: </h2>
+          <h2>Your total score is: <span id="totalScore"></span> </h2>
         </div>
-        <!--total Score displayed-->
+        <!-- total Score displayed
+        <p id="totalScore"></p> -->
 
-        <p id="totalScore"></p>
-       
       </div>
     </div>
   </div>
-
+  <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>

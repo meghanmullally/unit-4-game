@@ -13,11 +13,10 @@ h1 {
   color: black;
   /* background-color: orange; */
   line-height: 34px;
-   margin: 10px;
-  padding: 10px; 
+  margin: 10px;
+  padding: 10px;
   text-align: center;
 }
-
 
 .rules {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -29,17 +28,25 @@ h1 {
   line-height: 28px;
   color: black;
 }
- 
-.win-losses, .totalScore-section {
-  background-color: lightseagreen; 
+
+#ranNumb,
+#totalScore {
+  font-size: 34px;
+  color: black;
+  text-align: center;
+}
+
+.win-losses,
+.totalScore-section {
   padding: 10px;
   margin: 10px;
   width: 300px;
+  border: 2px solid black;
 }
 
 .button-section {
-margin: 5px;
-padding: 15px;
+  margin: 5px;
+  padding: 15px;
 }
 
 button img {
@@ -47,11 +54,10 @@ button img {
   height: 79px;
 }
 
-#win-lose, #totalScore {
-  background-color: green; 
+#win-lose,
+#totalScore {
   padding: 10px;
   margin: 10px;
   width: 300px;
   height: 225px;
 }
-
