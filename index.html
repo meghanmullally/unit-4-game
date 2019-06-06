@@ -7,6 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Crystal Game</title>
 
+
+  <!--BootStrap Css-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
   <!--Css links-->
   <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -14,56 +20,76 @@
 </head>
 
 <body>
-<h1>Crystals Collector!!</h1>
-<section class="rules">
-<p>
-  You will be given a random number at the start of the game.
-  <br>
-  There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
-  <br>
-  You win the game by matching your total score to random number, you will lose the game if your total score goes above the random number.
-  <br>
-  The value of each crystal is hidden from you until you click on it. 
-  <br>
-  Each time when the game starts, the game will change the values of each crystal 
-</p>
-</section>
-<section class="randomNum-section">
-<!--RandomNumber displayed-->
-<div id="ranNumb"></div>
-</section>
+  <h1>Crystals Collector!!</h1>
+  <div class="container">
+    <div class="row">
+      <!--INSTRUCTIONS SECTION-->
+      <section class="rules">
+        <h2>Instructions:</h2>
+        <p>
+          You will be given a random number at the start of the game.
+          <br>
+          There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total
+          score.
+          <br>
+          You win the game by matching your total score to random number, you will lose the game if your total score
+          goes
+          above the random number.
+          <br>
+          The value of each crystal is hidden from you until you click on it.
+          <br>
+          Each time when the game starts, the game will change the values of each crystal
+        </p>
+      </section>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="randomNum-section">
+          <!--RandomNumber displayed-->
+          <div id="ranNumb"></div>
+        </div>
 
-<section class="win-losses">
-  <h2 class="wins">Wins: </h2>
-  <h2 class="losses">Losses: </h2>
-</section>
-  <!--Where the win and losses scores will be-->
-<div id="win-lose"></div>
+        <section class="win-losses">
+          <h2 class="wins">Wins: <span id="wins"></span></h2>
+          <h2 class="losses">Losses: <span id="losses"></span> </h2>
+        </section>
+        <!--Where the win and losses scores will be-->
+        <p id="win-lose"></p>
+      </div>
 
 
-  <!-- There will be four crystals displayed as buttons on the page. -->
-  <section class="button-section">
-  <button id="red-button">
-    <img src="assets/images/red.png">
-  </button>
-  <button id="blue-button">
-    <img src="assets/images/blue.png">
-  </button>
-  <button id="green-button">
-    <img src="assets/images/green.png">
-  </button>
-  <button id="yellow-button">
-    <img src="assets/images/yellow.png">
-  </button>
-</section>
+      <div class="col">
+        <!-- There will be four crystals displayed as buttons on the page. -->
+        <div class="button-section">
+          <button id="red-button">
+            <img class="crystalValue" id="red" src="assets/images/redGem.png" alt="red-crystal1">
+          </button>
+          <button  id="blue-button">
+            <img class="crystalValue" id="blue" src="assets/images/blueGem.png" alt="blue-crystal2">
+          </button>
+          <button id="green-button">
+            <img class="crystalValue" id="green" src="assets/images/greenGem.png" alt="green-crystal3">
+          </button>
+          <button id="yellow-button">
+            <img class="crystalValue" id="yellow" src="assets/images/yellowGem.jpg" alt="yellow-crystal4">
+          </button>
+          <div class="row">
+          <button type="button" class="btn btn-light btn-lg m-2">PLAY AGAIN</button>
+        </div>
+        </div>
+      </div>
 
-<section class="totalScore-section">
-<h2>Your total score is: </h2>
-</section>
-<!--total Score displayed-->
+      <div class="col">
+        <div class="totalScore-section">
+          <h2>Your total score is: </h2>
+        </div>
+        <!--total Score displayed-->
 
-<div id="totalScore"></div>
-
+        <p id="totalScore"></p>
+       
+      </div>
+    </div>
+  </div>
 
 </body>
 

@@ -1,118 +1,117 @@
- //  delcaring the variables 
+//  delcaring the variables 
 
 
- var ranNumb;
- var red;
- var green;
- var yellow;
- var blue;
- var totalScore;
- var counter = 0;
- var wins = 0;
- var losses = 0;
+var randomResult;
+var totalScore = 0;
+var wins = 0;
+var losses = 0;
+var red;
+var green;
+var yellow;
+var blue;
 
-
- function ranNumb(min, max) {
-   return Math.floor(Math.random() * (max - min + 1) + min);
- }
-
- $("#ranNumb").text(ranNumb);
-
-
- // When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
-
- // ON CLICK FUNCTION 
-
- $(document).ready(function () {
-
-
-   $("#red-button").on("click", function () {
-
-     totalScore += red
-
-     // put random number in totalScore
-     $("#red-button").text(ranNumb);
-   });
-
-   $("#blue-button").on("click", function () {
-     totalScore += blue
-   })
-
-   $("#green-button").on("click", function () {
-     totalScore += green
-   })
-
-   $("#yellow-button").on("click", function () {
-     totalScore += yellow
-   })
-
- });
-
-
- // Your game will hide THIS amount until the player clicks a crystal.
-
- // USER clicks on one of the crystals the score will update - score counter 
-
-
- // The player wins if their total score matches the random number from the beginning of the game.
-
- // IF ELSE STATEMENT 
-
- // The player loses if their score goes above the random number.
-
- // LOSES 
- // IF ELSE > RANDOM NUMBER 
-
- //  game restarts whenever the player wins or loses.
-
-
-
- // generate Random Integer 
- function generateRandomInteger(min, max) {
-   return Math.floor(min + Math.random() *(max + 1 - min))
- }
-
-
- // restartGame(); 
- // the player should see a new random number 
- // all crystrals will have FOUR new hidden values 
-
-//TODO: CHECK ABOUT *12+1 
-function reset() {
-  ranNumb = Math.floor(Math.random()*12+1);
-  console.log(ranNumb);
-  red = Math.floor(Math.random()*12+1);
-  green = Math.floor(Math.random()*12+1);
-  blue = Math.floor(Math.random()*12+1);
-  yellow = Math.floor(Math.random()*12+1);
-   // users scores will reset to O 
- // score counter will reset to 0 
-
-  totalScore = 0;
-  counter = 0;
+function newResults() {
+  // random number between 19-120 
+  randomResult = Math.floor(Math.random() * 102) + 19;
+  // Crystals Random 
+  // random number between 1 and 12
+  red = Math.floor(Math.random() * 12) + 1;
+  green = Math.floor(Math.random() * 12) + 1;
+  blue = Math.floor(Math.random() * 12) + 1;
+  yellow = Math.floor(Math.random() * 12) + 1;
 }
- 
 
- function evaluate() {
+// restartGame(); 
+// the player should see a new random number 
+// all crystrals will have FOUR new hidden values 
 
-   if (totalScore === compRandom) {
-     wins++;
-     $("wins").text(win-losses);
-     reset();
-     // put wins in the winnner section / else 
-   } else if (totalScore > compRandom) {
-     losses--;
-     $("losses").text(win-losses);
-     reset();
-     // put losses in the  loser sections
-   } else {
-     console.log("not equal")
-   }
+function newGame() {
+  newResults();
+  totalScore = 0;
+  $("#ranNumb").text(randomResult);
+  $("#totalScore").text(totalScore);
+  $("#red").attr("data-crystal", red);
+  $("#blue").attr("data-crystal", blue);
+  $("#yellow").attr("data-crystal", yellow);
+  $("#green").attr("data-crystal", green);
+  $("#wins").text(wins);
+  $("#losses").text(losses);
+  $("#win-lose").text("");
+}
 
- };
+console.log(red, yellow, green, blue);
+
+// WIN AND LOSE 
+
+function Winning() {
+  $("#win-lose").text("YAYY YOU WIN!");
+  wins++;
+  $("#wins").text(wins);
+  newGame();
+}
+
+function lossing() {
+  $("#win-lose").text("SORRY YOU LOST!");
+  losses++;
+  $("#losses").text(losses);
+  newGame();
+
+}
 
 
 
+// When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
 
- // number of games won , loses 
- // no refreshing the game 
+// ON CLICK FUNCTION 
+$(document).ready(function () {
+
+  $("#red").on("click", function () {
+    totalScore = totalScore + red;
+    console.log("New totalScore" + totalScore);
+    // win / lose 
+    if (totalScore === randomResult) {
+      Winning();
+    } else if (totalScore > randomResult) {
+      lossing();
+    }
+  })
+
+  $("#blue").on("click", function () {
+    totalScore = totalScore + blue;
+    console.log("New totalScore" + totalScore);
+    // win / lose 
+    if (totalScore === randomResult) {
+      Winning();
+    } else if (totalScore > randomResult) {
+      lossing();
+    }
+  })
+
+  $("#yellow").on("click", function () {
+    totalScore = totalScore + yellow;
+    console.log("New totalScore" + totalScore);
+    // win / lose 
+    if (totalScore === randomResult) {
+      Winning();
+    } else if (totalScore > randomResult) {
+      lossing();
+    }
+  })
+
+  $("#green").on("click", function () {
+    totalScore = totalScore + green;
+    console.log("New totalScore" + totalScore);
+    // win / lose 
+    if (totalScore === randomResult) {
+      Winning();
+    } else if (totalScore > randomResult) {
+      lossing();
+    }
+  });
+
+
+});
+
+$(".btn").on("click", function () {
+  newGame();
+});
